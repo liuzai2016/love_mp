@@ -1,0 +1,36 @@
+/* components/login.wxss */
+.login_block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+.user_portrait{
+  margin: 0 auto;
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.user_nickName{
+  display: block;
+  margin-top: 30rpx;
+  width: 100%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+.login_but{
+  margin-top: 30rpx;
+  width: 160rpx;
+  height: 80rpx !important;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  letter-spacing: 10rpx;
+  background-color: #0cbcc2;
+}

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/me/me",
+    "pages/result/result",
+    "pages/index/index",
+    "pages/create/create",
+    "pages/prattle/prattle",
+    "pages/music/music",
+    "pages/love/love"
+  ],
+  "tabBar": {
+    "color": "#3e3e3e",
+    "selectedColor": "#e9152e",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/result/result",
+        "iconPath": "images/result.png",
+        "selectedIconPath": "images/result_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_active.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "快表白",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

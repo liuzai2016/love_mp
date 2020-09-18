@@ -1,0 +1,34 @@
+<login wx:if="{{ !logined }}" bindloginevent="loginevent"></login>
+<view wx:else class="result">
+  <view wx:if="{{ showContent }}" class="result_body">
+    <view class="head">
+      <view class="content">{{ detail.content }}</view>
+    </view>
+    <view class="body">
+      <view class="list" wx:if="{{  detail.targets && detail.targets.length }}">
+        <view class="list_item"
+          wx:for="{{  detail.targets }}" 
+          wx:for-item="n" 
+          wx:for-index="i" 
+          wx:key="i"
+        >
+          <image class="list_item_img" src="{{ n.target_img }}"></image>
+          <view class="list_item_right">
+            <view class="list_item_title">
+              <text wx:if="{{ n.accept == -1 }}">很遗憾</text>
+              <text wx:else>恭喜你</text>
+            </view>
+            <view class="list_item_text">{{ n.nickName }}{{ n.accept_name }}你的感情</view>
+          </view>
+        </view>
+      </view>
+      <view class="hint" wx:else>
+        <view class="hint_text">没人回应</view>
+        <view class="hint_skip" bindtap="toLove">这就去分享</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="result_create">
+    <view class="result_create_but" bindtap="toHome">创建情书</view>
+  </view>
+</view>

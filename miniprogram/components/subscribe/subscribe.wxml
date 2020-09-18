@@ -1,0 +1,11 @@
+<view class="subscribe {{ show }}">
+  <view class="subscribe_head">
+    <view class="subscribe_head_close" bindtap="close">x</view>
+  </view>
+  <view class="subscribe_body">
+    <text class="subscribe_body_text">授权之后可以更快知道对方的答复哦！</text>
+  </view>
+  <view class="subscribe_bottom">
+    <button class="subscribe_bottom_but" bindtap="accept">接收消息</button>
+  </view>
+</view>

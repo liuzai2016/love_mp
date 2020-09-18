@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "login": "../../components/login/login",
+    "musicPlay": "../../components/musicPlay/musicPlay",
+    "subscribe": "../../components/subscribe/subscribe"
+  }
+}

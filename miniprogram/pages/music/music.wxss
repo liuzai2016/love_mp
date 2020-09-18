@@ -1,0 +1,74 @@
+/* miniprogram/pages/music/music.wxss */
+.music_top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15rpx 0;
+  width: 100vw;
+  height: 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.music_top_name{
+  float: left;
+  width: calc(100vw - 40px);
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-indent: 20px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.music_list{
+  padding: 45px 10rpx 0;
+  box-sizing: border-box;
+}
+.item{
+  display: flex;
+  height: 120rpx;
+  margin-top: 20rpx;
+  background: #ffffff;
+  overflow: hidden;
+}
+.item_img{
+  flex: none;
+  width: 120rpx;
+  height: 120rpx;
+}
+.item_body{
+  flex: 1;
+  width: 100%;
+  padding: 0 10rpx;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item_title{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  color: aquamarine;
+}
+.item_text{
+  height: 70rpx;
+  line-height: 35rpx;
+  font-size: 26rpx;
+  color: #aaaaaa;
+  overflow: hidden;
+}
+.item_buttons{
+  margin-right: 20rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 140rpx;
+  height: 40rpx;
+  line-height: normal !important;
+  font-size: 30rpx;
+  overflow: hidden;
+}

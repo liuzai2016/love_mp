@@ -1,0 +1,28 @@
+<subscribe></subscribe>
+<login wx:if="{{ !logined }}" bindloginevent="loginevent"></login>
+<view wx:else class="group_item {{ detail.active_class }}" 
+  style="background-color: {{ detail.background }};background-image:url({{ detail.img }});">
+  <view class="group_item_top">
+    <musicPlay id="playerEl"></musicPlay>
+  </view>
+  <view class="group_body" style="color:{{ detail.color }}">
+    <view class="body_p">
+      {{ detail.show_content }}
+    </view>
+    <view class="body_author">{{ detail.show_author }}</view>
+  </view>
+  <view class="group_question"
+    wx:if="{{ show_question }}"
+  >
+    <view class="question_p">{{ detail.question }}</view>
+    <view class="question_buttons">
+      <view class="question_button_accept" bindtap="sendIdea" data-type="{{ 1 }}">接受</view>
+      <view class="question_button_refuse" bindtap="sendIdea" data-type="{{ -1 }}">婉拒</view>
+    </view>
+  </view>
+  <view class="group_buttons"
+    wx:if="{{ preview }}"
+  >
+    <view class="create" bindtap="createEvent">就选它了</view>
+  </view>
+</view>

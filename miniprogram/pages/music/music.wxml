@@ -1,0 +1,21 @@
+<view class="music">
+  <view class="music_top">
+    <view class="music_top_name" wx:if="{{ play_name }}">正在试听：{{ play_name }}</view>
+    <musicPlay id="playerEl"></musicPlay>
+  </view>
+  <view class="music_list" wx:if="{{ list.length }}">
+    <view class="item" wx:for="{{ list }}" wx:for-item="n" wx:for-index="i" wx:key="i">
+      <image class="item_img" 
+        src="{{ n.face_img }}"
+      ></image>
+      <view class="item_body">
+        <view class="item_title">{{ n.name }}</view>
+        <view class="item_text">{{ n.text || '表白热门歌曲' }}</view>
+      </view>
+      <view class="item_buttons">
+        <view class="button_1" bindtap="audition" data-n="{{ n }}">试听</view>
+        <view class="button_2" bindtap="selected" data-n="{{ n }}">选它</view>
+      </view>
+    </view>
+  </view>
+</view>

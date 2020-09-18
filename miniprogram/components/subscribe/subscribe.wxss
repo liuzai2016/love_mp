@@ -1,0 +1,49 @@
+/* components/subscribe/subscribe.wxss */
+.subscribe{
+  position: fixed;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 100px);
+  width: 200px;
+  height: 200px;
+  background: rgba(0,0,0,0) url(https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/popup.png) no-repeat center;
+  background-size: 100% 100%;
+  z-index: 1000;
+}
+.popup_hide{
+  display: none;
+}
+.subscribe_head{
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.subscribe_head_close{
+  float: right;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #898989;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 100%;
+  box-shadow: 0 2px 3px #999999;
+}
+
+.subscribe_body{
+  margin-top: 25px;
+  margin-left: 20px;
+  width: 160px;
+  height: 80px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.subscribe_bottom{
+  overflow: hidden;
+}
+.subscribe_bottom_but{
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+}

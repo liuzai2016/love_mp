@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "musicPlay": "../../components/musicPlay/musicPlay"
+  },
+  "enablePullDownRefresh": true
+}

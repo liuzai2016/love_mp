@@ -1,0 +1,8 @@
+<view class="page">
+  <textAnimate
+    wx:if="{{ list && list.length }}"
+    id="textAnimateEl" 
+    bindcreateEvent="createEvent" 
+    bindshowEvent="showEvent"
+  ></textAnimate>
+</view>

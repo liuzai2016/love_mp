@@ -1,0 +1,23 @@
+@import "../../style/global.wxss";
+.body{
+  height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.group_item{
+  position: relative;
+  height: 100vh;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.group_item_top{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15rpx 0;
+  height: 40px;
+  box-sizing: border-box;
+}

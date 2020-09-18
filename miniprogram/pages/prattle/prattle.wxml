@@ -1,0 +1,15 @@
+<!--情话-->
+<view class="prattle">
+  <view class="prattle_list">
+    <view class="prattle_list_item" 
+      bindtap="selcetItem"
+      data-n="{{ n }}"
+      wx:for="{{ list }}" 
+      wx:for-item="n" 
+      wx:for-index="i" 
+      wx:key="i"
+    >
+      {{ n.content }}
+    </view>
+  </view>
+</view>

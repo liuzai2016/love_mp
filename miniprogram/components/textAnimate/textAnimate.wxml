@@ -1,0 +1,45 @@
+<view class="body">
+  <swiper 
+    class="group"
+    circular="{{ circular }}"
+    autoplay="{{ autoplay }}"
+    current="{{ current }}"
+    interval="{{ interval }}"
+    duration="{{ duration }}"
+    previous-margin="{{ margin }}"
+    next-margin="{{ margin }}"
+    easing-function="{{ easing }}"
+    bindchange="changeSwiper"
+  >
+    <block wx:if="list.length" wx:for="{{ list }}" wx:for-item="n" wx:for-index="i" wx:key="i">
+      <swiper-item data-n="{{ n }}">
+        <view class="group_item {{ n.active_class }}" 
+          style="background-color: {{ n.background }};background-image:url({{ n.img }});">
+          <view class="group_body" style="color:{{ n.color }}">
+            <view class="body_p" wx:if="{{ !n.active_class || pageType === 'home'}}">
+              {{ n.content }}
+            </view>
+            <view class="body_p" wx:else>
+              {{ n.show_content }}
+            </view>
+            <view class="body_author" wx:if="{{ !n.active_class && !n.show_author  || pageType === 'home' }}">—— {{ n.author_name }}</view>
+            <view class="body_author" wx:else>{{ n.show_author }}</view>
+          </view>
+          <view class="group_question"
+            wx:if="{{ !n.active_class || n.show_question || pageType === 'home' }}"
+          >
+            <view class="question_p">{{ n.question }}</view>
+            <view class="question_buttons">
+              <view class="question_button_accept" bindtap="accept" data-n="{{ n }}">接受</view>
+              <view class="question_button_refuse" bindtap="refuse" data-n="{{ n }}">婉拒</view>
+            </view>
+          </view>
+          <view class="group_buttons" wx:if="{{ pageType === 'home' }}">
+            <view class="show" bindtap="showEvent" data-n="{{ n }}">查看效果</view>
+            <view class="create" bindtap="createEvent" data-n="{{ n }}">就选它了</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

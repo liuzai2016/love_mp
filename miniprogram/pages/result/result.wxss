@@ -1,0 +1,93 @@
+/* miniprogram/pages/result/result.wxss */
+page{
+  background: url(https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/main_background.png?sign=9aea478b9c3c86640222e9d08708382b&t=1600442518) no-repeat center;
+  background-size: 60% auto;
+}
+.result{
+  min-height: 100vh;
+  background: url(https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/background_icon.png?sign=57bcd46f967f647d815dc1f8a226d2c9&t=1600358818) no-repeat right bottom;
+}
+.head{
+  overflow: hidden;
+}
+.content{
+  line-height: 60rpx;
+  white-space: pre-line;
+  text-align: center;
+}
+.list{
+  margin-top: 50rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.list_item{
+  display: flex;
+  height: 240rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  box-shadow: 0 5rpx 10rpx #989898;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.list_item_img{
+  flex: none;
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #ffffff;
+}
+.list_item_right{
+  flex: 1;
+  padding: 20rpx 0;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.list_item_title{
+  font-size: 40rpx;
+  line-height: 100rpx;
+  letter-spacing: 10rpx;
+  color: #e9152e;
+  font-weight: bold;
+  text-align: center;
+}
+.list_item_text{
+  font-size: 30rpx;
+  text-align: center;
+}
+
+
+.hint{
+  margin-top: 50rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+.hint_text{
+  color: #989898;
+}
+.hint_skip{
+  margin: 50rpx auto;
+  width: 200rpx;
+  padding: 10rpx 20rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background-color: #228ab9;
+}
+
+.result_create{
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+.result_create_but{
+  margin: 0 auto;
+  width: 80px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  background: #228ab9;
+}

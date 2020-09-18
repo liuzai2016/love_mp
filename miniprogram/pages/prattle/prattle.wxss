@@ -1,0 +1,16 @@
+/* miniprogram/pages/prattle/prattle.wxss */
+.prattle{
+  padding: 0 20rpx;
+  height: 100vh;
+  overflow: auto;
+}
+.prattle_list_item{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  cursor: pointer;
+  white-space: pre-line;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}

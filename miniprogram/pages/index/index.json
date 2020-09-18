@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "textAnimate": "../../components/textAnimate/textAnimate"
+  }
+}

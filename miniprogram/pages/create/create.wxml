@@ -1,0 +1,65 @@
+<subscribe></subscribe>
+<login wx:if="{{ !logined }}" bindloginevent="loginevent"></login>
+<view wx:else
+  class="create"
+  style="background-color: {{ detail.background }};background-image:url({{ detail.img }});"
+>
+  <view class="create_body">
+    <view class="create_body_top">
+      <view 
+        class="create_body_top_button"
+        style="color:{{ detail.color }};"
+        bindtap="topMusic"
+      >选择音乐</view>
+      <musicPlay id="playerEl"></musicPlay>
+    </view>
+    <view class="edit_title">
+      <input class="edit_title_input" 
+        style="color:{{ detail.color }};border-color: {{ detail.color }}"
+        type="text" 
+        value="{{ title }}"
+        bindinput="titleInput"
+      ></input>
+    </view>
+    <view class="edit_content">
+      <view class="edit_content_prattle" bindtap="openPrattle">选择情话</view>
+      <textarea class="edit_content_el" name="" id="" cols="30" rows="10" 
+        style="color:{{ detail.color }};border-color: {{ detail.color }}"
+        value="{{ content }}"
+        auto-height="{{ autoHeight }}"
+        show-confirm-bar="{{ true }}"
+        bindinput="contentInput"
+        bindlinechange="lineChange"
+      ></textarea>
+    </view>
+    <view class="edit_author" style="color:{{ detail.color }}">
+      <text class="edit_author_symbol">——</text>
+      <input class="edit_author_input" 
+        style="border-color: {{ detail.color }}"
+        type="text" 
+        value="{{ author }}"
+        bindinput="authorInput"
+      ></input>
+    </view>
+    <view class="edit_question">
+      <view class="question_p">
+        <textarea class="edit_question_textarea"
+          cols="30" 
+          rows="2" 
+          value="{{ question }}"
+          show-confirm-bar="{{ true }}"
+          bindinput="questionInput"
+          bindlinechange="lineChange"
+        ></textarea>
+        <!-- <input class="edit_question_input" type="text" value="{{ question }}"></input> -->
+      </view>
+      <view class="question_buttons">
+        <view class="question_button_accept">接受</view>
+        <view class="question_button_refuse">婉拒</view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="cerateButton" bindtap="createEvent">创 建</view>
+    </view>
+  </view>
+</view>

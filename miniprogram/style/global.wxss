@@ -1,0 +1,122 @@
+
+/* .group_item{
+  position: relative;
+  margin: 20px 10px;
+  height: calc(100% - 40px);
+  background-color: #ff6600;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  overflow: hidden;
+  box-sizing: border-box;
+} */
+/* .group_item_active{
+  padding: 0 !important;
+  margin: 5px 10px !important;
+  height: calc(100% - 10px) !important;
+} */
+.group_buttons{
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+.show{
+  margin: 30rpx auto;
+  width: 40%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10rpx;
+  background-color: #0cbcc2;
+}
+.create{
+  margin: 0 auto;
+  width: 40%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10rpx;
+  background-color: #e9152e;
+}
+
+.group_body{
+  margin-top: 10%;
+  padding: 0 60rpx;
+  box-sizing: border-box;
+}
+.body_p{
+  font-size: 40rpx;
+  line-height: 70rpx;
+  text-align: left;
+  white-space: pre-line;
+}
+.body_end{
+  font-size: 40rpx;
+  text-align: right;
+}
+.body_author{
+  font-size: 26rpx;
+  text-align: right;
+}
+
+.group_question{
+  position: relative;
+  margin: 10% auto;
+  padding: 30rpx 60rpx;
+  width: 90%;
+  box-sizing: border-box;
+  background-color: rgba(250, 41, 41, 0.5);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 20rpx;
+  -webkit-animation: questionAnimate 0.5s ease-in;
+  animation: questionAnimate 0.5s ease-in;
+  overflow: hidden;
+}
+.question_buttons{
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60rpx;
+  font-size: 36rpx;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.question_button_accept{
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 33rpx;
+  background-color: #0cbcc2;
+}
+.question_button_refuse{
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 33rpx;
+  background-color: #accbcc;
+}
+
+@keyframes questionAnimate {
+  0%{
+    top: 20%;
+    opacity: 0;
+  }
+  100%{
+    top: 0%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes questionAnimate {
+  0%{
+    top: 20%;
+    opacity: 0;
+  }
+  100%{
+    top: 0%;
+    opacity: 1;
+  }
+}

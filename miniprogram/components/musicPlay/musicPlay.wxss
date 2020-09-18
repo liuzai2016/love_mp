@@ -1,0 +1,61 @@
+/* components/musicPlay/musicPlay.wxss */
+.player{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.palyer_background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: url('https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/music.png?sign=2a74a4c23a65ce3c853f5acc3c734a0d&t=1599929761') no-repeat center;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.rotateBackground{
+  -webkit-animation: playRotate 3s linear 0s infinite;
+  animation: playRotate 3s linear 0s infinite;
+}
+.player_view{
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+}
+.play_status{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+
+@-webkit-keyframes playRotate{
+  0%{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes playRotate{
+  0%{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,7 @@
+<view class="player">
+  <view class="palyer_background {{ rotateClass }}"></view>
+  <view class="player_view" bindtap="changePlay">
+    <!-- <image wx:if="{{ play }}" class="play_status" src="../../images/play.png" mode=""></image>
+    <image wx:else class="play_status" src="../../images/pause.png" mode=""></image> -->
+  </view>
+</view>
