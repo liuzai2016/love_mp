@@ -118,7 +118,7 @@ Page({
     return {
       title: '快表白',
       path: '/pages/index/index',
-      imageUrl: 'https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/share.jpg'
+      imageUrl: 'https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/share_img.png'
     }
   }
 })

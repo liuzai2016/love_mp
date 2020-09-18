@@ -270,7 +270,7 @@ Page({
     return {
       title: this.data.detail.title || '快表白',
       path: '/pages/love/love?love_id='+ this.data.detail._id,
-      imageUrl: 'https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/share.jpg'
+      imageUrl: 'https://6973-issue-c29395-1257603811.tcb.qcloud.la/kbb_img/share_img.png'
     }
   }
 })
