@@ -27,7 +27,32 @@ export const verifyUser = function (param){
     }
   })
 }
-
+export let animateTime = null
+export let animateText = ''
+export const initTimeObj = function (){
+  if(animateTime){
+    clearInterval(animateTime)
+    animateTime = null
+  }
+}
+export const textAnimateFunc = function (text,callback){
+  var animateIndex = 0,
+    str = ''
+  initTimeObj()
+  animateTime = setInterval(()=>{
+    str = str.replace(/[\|]/g,'')
+    str += text.charAt(animateIndex)
+    animateIndex ++
+    if(str.length >= text.length){
+      initTimeObj()
+      callback(str,'end')
+    }
+    else {
+      str += '|'
+      callback(str)
+    }
+  },200)
+}
 export const randomStr = function (len) {
   len = len || 32;
   var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/

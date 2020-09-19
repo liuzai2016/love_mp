@@ -1,4 +1,5 @@
 // components/textAnimate/textAnimate.js
+import { textAnimateFunc } from "../../js/common.js"
 Component({
   /**
    * 组件的属性列表
@@ -114,18 +115,6 @@ Component({
       list
     })
   },
-    // initTimeObj(){
-    //   this.animateIndex = 0
-    //   if(this.animateTime){
-    //     clearInterval(this.animateTime)
-    //     this.animateTime = null
-    //   }
-    //   var list = Array.from(this.data.list)
-    //   list[this.data.current].show_question = false
-    //   this.setData({
-    //     list
-    //   })
-    // },
     textAnimate(){
       this.initTimeObj()
       if(!this.data.list || !this.data.list.length){
@@ -137,46 +126,35 @@ Component({
       }
       var content = this.data.list[this.data.current].content
       var list = Array.from(this.data.list)
-      var str = ''
       this.symbol = content.split('\n').length
-      this.animateTime = setInterval(()=>{
-        str = str.replace(/[\|]/g,'')
-        // 还有去除竖线
-        if(str.length - 1 > content.length - this.symbol){
-          this.initTimeObj()
-          this.showAuthor()
-        }
-        else {
-          str += content.charAt(this.animateIndex) + '|'
-        }
-        this.animateIndex ++
+      
+      textAnimateFunc(content,(s,f)=>{
         list[this.data.current].show_content = str
         this.setData({
           list
         })
-      },300)
+        if(f === 'end'){
+          this.showAuthor()
+        }
+      })
     },
     // 显示发布者
     showAuthor(){
       this.initTimeObj()
       var author = '———— '+ this.data.list[this.data.current].author
       var list = Array.from(this.data.list)
-      var str = ''
-      this.animateTime = setInterval(()=>{
-        str = str.replace(/[\|]/g,'')
-        if(str.length > author.length - this.symbol){
-          this.initTimeObj()
-          list[this.data.current].show_question = true
-        }
-        else {
-          str += author.charAt(this.animateIndex) + '|'
-        }
-        this.animateIndex ++
+      
+      textAnimateFunc(author,(s,f)=>{
         list[this.data.current].show_author = str
         this.setData({
           list
         })
-      },200)
+        if(f === 'end'){
+          this.setData({
+            show_question: true
+          })
+        }
+      })
     },
     init(param = {}){
       this.setData({
@@ -186,15 +164,4 @@ Component({
       this.textAnimate()
     },
   },
-  // ready(){
-  //   this.textAnimate()
-  // },
-  // observers:{
-  //   init_list(l){
-  //     this.setData({
-  //       list: l
-  //     })
-  //     this.textAnimate()
-  //   }
-  // },
 })

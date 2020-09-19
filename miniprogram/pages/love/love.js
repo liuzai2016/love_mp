@@ -1,5 +1,5 @@
 // miniprogram/pages/love/love.js
-import { verifyUser } from "../../js/common.js"
+import { verifyUser,textAnimateFunc } from "../../js/common.js"
 import { getLoveBook,acceptLove } from "../../js/dataService.js"
 Page({
 
@@ -45,48 +45,33 @@ Page({
   textAnimate(){
     var detail = { ...this.data.detail }
     var content = detail.content
-    var str = ''
     this.symbol = content.split('\n').length
-    this.initTimeObj()
-    this.animateTime = setInterval(()=>{
-      str = str.replace(/[\|]/g,'')
-      if(str.length - 1> content.length - this.symbol){
-        this.initTimeObj()
-        this.showAuthor()
-      }
-      else {
-        str += content.charAt(this.animateIndex) + '|'
-      }
-      this.animateIndex ++
-      detail.show_content = str
+    textAnimateFunc(content,(s,f)=>{
+      detail.show_content = s
       this.setData({
         detail
       })
-    },300)
+      if(f === 'end'){
+        this.showAuthor()
+      }
+    })
   },
   // 显示发布者
   showAuthor(){
     this.initTimeObj()
     var detail = { ...this.data.detail }
     var author = '———— '+ detail.author_name
-    var str = ''
-    this.animateTime = setInterval(()=>{
-      str = str.replace(/[\|]/g,'')
-      if(str.length > author.length - this.symbol){
-        this.initTimeObj()
+    textAnimateFunc(author,(s,f)=>{
+      detail.show_author = s
+      this.setData({
+        detail
+      })
+      if(f === 'end'){
         this.setData({
           show_question: true
         })
       }
-      else {
-        str += author.charAt(this.animateIndex) + '|'
-      }
-      this.animateIndex ++
-      detail.show_author = str
-      this.setData({
-        detail
-      })
-    },200)
+    })
   },
   init(detail){
     detail = detail || wx.getStorageSync('template')
