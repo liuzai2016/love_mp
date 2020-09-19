@@ -16,8 +16,8 @@
   >
     <view class="question_p">{{ detail.question }}</view>
     <view class="question_buttons">
-      <view class="question_button_accept" bindtap="sendIdea" data-type="{{ 1 }}">接受</view>
-      <view class="question_button_refuse" bindtap="sendIdea" data-type="{{ -1 }}">婉拒</view>
+      <view class="question_button_accept" bindtap="acceptIdea" data-type="{{ 1 }}">接受</view>
+      <view class="question_button_refuse" bindtap="acceptIdea" data-type="{{ -1 }}">婉拒</view>
     </view>
   </view>
   <view class="group_buttons"

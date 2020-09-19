@@ -60,7 +60,7 @@ Page({
   showAuthor(){
     this.initTimeObj()
     var detail = { ...this.data.detail }
-    var author = '———— '+ detail.author_name
+    var author = '—— '+ detail.author_name
     textAnimateFunc(author,(s,f)=>{
       detail.show_author = s
       this.setData({
@@ -104,10 +104,28 @@ Page({
       console.log('error = ', error)
     })
   },
-  // 接受或拒绝
-  sendIdea(e){
+  acceptIdea(e){
+    if(!this.love_id){
+      return false;
+    }
     var type = e.currentTarget.dataset.type
     var text = type == -1 ? '拒绝' : '接受'
+    wx.showModal({
+      title: "提示",
+      content: type == -1 
+      ? '真要拒绝一个爱你的人？'
+      : '被人爱是一件很幸福的事！',
+      cancelText: '再想想',
+      confirmText: text,
+      success: (res)=>{
+        if(res.confirm){
+          this.sendIdea(type,text)
+        }
+      }
+    })
+  },
+  // 接受或拒绝
+  sendIdea(type,text){
     if(this.love_id){
       var user_info = wx.getStorageSync('user_info')
       acceptLove({
