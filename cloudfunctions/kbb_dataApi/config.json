@@ -1,5 +1,5 @@
 {
   "permissions": {
-    "openapi": ["templateMessage.send"]
+    "openapi": ["templateMessage.send","security.msgSecCheck"]
   }
 }

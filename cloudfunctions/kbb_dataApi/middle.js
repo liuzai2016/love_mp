@@ -2,7 +2,7 @@
  * 数据交互的中间过程
 */
 
-const { getData,getCount,addData,updateData,judgeExistTarget,updateLoveBookData,sendMessage } = require('./dbService.js')
+const { getData,getCount,addData,updateData,judgeExistTarget,updateLoveBookData,textAnalysis,sendMessage } = require('./dbService.js')
 const middle = {}
 
 /**
@@ -94,11 +94,17 @@ middle.addLoveBook = function (param = {}){
         author: param.data.author,
         del: -1
       }
-    })
+    }),
+    textAnalysis(
+      param.data.content+' '+param.data.author_nickName+' '+ param.data.author_name+' '+ param.data.title+' '+ param.data.question
+    )
   ])
   .then((res)=>{
     if(res[0] && res[0].data && res[0].data.total > 0){
-      return ({ code: 0,status: -1,message: '用情专一点，已经有一封情书了，若是需要写新的情书需要先删除之前的情书' })
+      return { code: 0,status: -1,message: '用情专一点，已经有一封情书了，若是需要写新的情书需要先删除之前的情书' }
+    }
+    else if (res[1] && res[1].status === -1){
+      return { code: 0,status: -1, message: res[1].message || '创建失败！文本内容应该健康积极' }
     }
     else {
       return  addData({

@@ -195,7 +195,30 @@ dbService.judgeExistTarget = function (param = {}){
               })
           })
 }
-
+/**
+ * 文本安全校验
+*/
+dbService.textAnalysis = function (text){
+  text = text.replace(/(\s|\n){1}/g,'')
+  if(/做爱|约炮|操逼|一夜情|反动|独立|插逼|打炮/.test(text)){
+    return { status: -1 , message: '创建失败！内容应该积极健康' }
+  }
+  return new Promise((resolve,reject)=>{
+    cloud.openapi.security.msgSecCheck({ content: text })
+    .then(({ errCode,errMsg })=>{
+      if(errCode === 0){
+        resolve({ status: 1 , message: '文本内容通过' })
+      }
+      else {
+        resolve({ status: -1 , message: '创建失败！内容应该积极健康' })
+      }
+    })
+    .catch((error)=>{
+      console.log(error)
+      resolve({ status: -1 , message: '文本内容校验失败' })
+    })
+  })
+}
 /**
  * 消息发布
  * @param { access_token,openid,template_id,page,data,love_id, }
