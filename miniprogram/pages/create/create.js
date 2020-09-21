@@ -60,9 +60,24 @@ Page({
   },
   // 跳转音乐列表页
   topMusic(){
+    this.updateData()
     wx.navigateTo({
       url: '../music/music',
     })
+  },
+  //更新填写数据
+  updateData(){
+    var user_info = wx.getStorageSync('user_info')
+    var options = {
+      ...this.data.detail,
+      title: this.data.title,
+      content: this.data.content,
+      question: this.data.question,
+      author_name: this.data.author_name,
+      author_nickName: user_info.nickName,
+      music: this.data.music
+    }
+    wx.setStorageSync('template', options)
   },
   // content输入事件
   max_length: 60,
@@ -214,14 +229,7 @@ Page({
     })
   },
   openPrattle(){
-    var data = {
-      ...this.data.detail,
-      title: this.data.title,
-      content: this.data.content,
-      question: this.data.question,
-      author_name: this.data.author_name,
-    }
-    wx.setStorageSync('template', data)
+    this.updateData()
     wx.navigateTo({
       url: '../prattle/prattle',
     })

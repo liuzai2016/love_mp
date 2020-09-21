@@ -74,7 +74,8 @@ Page({
     })
   },
   init(detail){
-    detail = detail || wx.getStorageSync('template')
+    detail = detail || wx.getStorageSync('template') || {}
+    delete detail.show_author
     this.setData({
       detail
     })
@@ -96,6 +97,7 @@ Page({
       love_id: this.love_id
     })
     .then(({ result })=>{
+      console.log(result)
       wx.hideLoading()
       this.init(result.data[0])
     })

@@ -9,7 +9,7 @@
     <view class="body_p">
       {{ detail.show_content }}
     </view>
-    <view class="body_author">{{ detail.show_author }}</view>
+    <view class="body_author" wx:if="{{ detail.show_author }}">{{ detail.show_author }}</view>
   </view>
   <view class="group_question"
     wx:if="{{ show_question }}"
