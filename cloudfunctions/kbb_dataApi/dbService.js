@@ -200,9 +200,6 @@ dbService.judgeExistTarget = function (param = {}){
 */
 dbService.textAnalysis = function (text){
   text = text.replace(/(\s|\n){1}/g,'')
-  if(/做爱|约炮|操逼|一夜情|反动|独立|插逼|打炮/.test(text)){
-    return { status: -1 , message: '创建失败！内容应该积极健康' }
-  }
   return new Promise((resolve,reject)=>{
     cloud.openapi.security.msgSecCheck({ content: text })
     .then(({ errCode,errMsg })=>{
